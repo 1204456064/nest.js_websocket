@@ -20,9 +20,10 @@ export class HttpServiceResponseInterceptor implements NestInterceptor {
     return next.handle().pipe(
       map((data) => {
         // 进入该拦截器，说明没有异常，使用成功返回
-        const resp: { returnCode: string, data: string} = {
-          returnCode: SUCCESS.codeString,
+        const resp: { code: string, data: string; message: string } = {
+          code: SUCCESS.codeString,
           data: data,
+          message: "请求成功"
         };
         return resp;
       }),
