@@ -16,6 +16,8 @@ export class HttpServiceExceptionFilter implements ExceptionFilter {
         // 请求上下文
         const request = ctx.getRequest<Request>();
 
+        console.log(exception);
+        
         // 异常码
         const status = exception.getStatus();
         
